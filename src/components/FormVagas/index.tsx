@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react'
-import { FormContainer, Campo, Botao } from './FormStyles'
+import { Form, Campo, BtnPesquisar } from './FormStyles'
 
 type Props = {
   aoPesquisar: (termo: string) => void
@@ -10,20 +10,20 @@ const FormVagas = ({ aoPesquisar }: Props) => {
 
   const aoEnviarForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    aoPesquisar(termo.toLowerCase())
+    aoPesquisar(termo.toLocaleLowerCase())
   }
 
   return (
-    <FormContainer onSubmit={aoEnviarForm}>
+    <Form onSubmit={aoEnviarForm}>
       <Campo
         placeholder="Front-end, fullstack, node, design"
         onChange={(e) => setTermo(e.target.value)}
         type="search"
       />
-      <Botao type="submit">
+      <BtnPesquisar type="submit">
         Pesquisar
-      </Botao>
-    </FormContainer>
+      </BtnPesquisar>
+    </Form>
   )
 }
 
