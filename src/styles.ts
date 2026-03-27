@@ -1,32 +1,32 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --cor-principal: #a7727d;
+    --cor-secundaria: #f9f5e7;
+  }
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Lato, sans-serif;
+    list-style: none;
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    -webkit-font-smoothing: antialiased;
+    padding-bottom: 120px;
   }
 
-  button {
-    cursor: pointer;
-    border: none;
+  .container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
   }
 
-  input, button, textarea {
-    font-family: inherit;
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 80%;
+    }
   }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`
-export {}
+`;
